@@ -3,8 +3,8 @@ from typing import Any
 
 from google.cloud.datastore import Key
 
-from model.properties.property import Property
-from model.types import KeyList
+from gcdmc.model.properties.property import Property
+from gcdmc.model.types import KeyList
 
 
 class KeyProperty(Property[Key, Key]):

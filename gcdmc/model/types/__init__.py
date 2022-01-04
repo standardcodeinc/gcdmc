@@ -5,8 +5,12 @@ import datetime
 
 from google.cloud.datastore import Key, Entity
 
-from model.types.typed_list import TypedList
-from model.types.utils import is_parseable_phone, is_valid_date, is_valid_email
+from gcdmc.model.types.typed_list import TypedList
+from gcdmc.model.types.utils import (
+    is_parseable_phone,
+    is_valid_date,
+    is_valid_email,
+)
 
 
 class BooleanList(TypedList[bool]):

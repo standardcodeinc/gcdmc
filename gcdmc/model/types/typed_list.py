@@ -24,6 +24,7 @@ class TypedList(Generic[T], List[T], list):
     :param iterable: An iterable of values to initialize the list with. Note
         that every value in the iterable will have its type and value checked.
     """
+
     def __init__(self,
                  type_: type,
                  validator: Optional[Validator] = None,

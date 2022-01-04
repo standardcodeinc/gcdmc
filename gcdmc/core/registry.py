@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Dict, Optional, Type
 
-from core.subentity import Subentity
+from gcdmc.core.subentity import Subentity
 
 
 class RegistryError(Exception):

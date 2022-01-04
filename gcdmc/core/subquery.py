@@ -7,8 +7,8 @@ from google.cloud.datastore import Client, Entity, Key
 from google.cloud.datastore.query import Iterator, Query
 from google.protobuf.message import Message
 
-from core.registry import Registry
-from core.subentity import Subentity
+from gcdmc.core.registry import Registry
+from gcdmc.core.subentity import Subentity
 
 
 class Subpage(Page):

@@ -13,9 +13,9 @@ from typing import (
 
 from google.cloud.datastore import Client, Entity, Key
 
-from core.subentity import Subentity, undelegated
-from model.errors import InvalidKeyError, UnexposedPropertyError
-from model.typed_entity import TypedEntity
+from gcdmc.core.subentity import Subentity, undelegated
+from gcdmc.model.errors import InvalidKeyError, UnexposedPropertyError
+from gcdmc.model.typed_entity import TypedEntity
 
 E = TypeVar('E', bound=TypedEntity)
 

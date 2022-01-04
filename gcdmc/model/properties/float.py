@@ -1,8 +1,8 @@
 from __future__ import annotations
 from typing import Any
 
-from model.properties.property import Property
-from model.types import FloatList
+from gcdmc.model.properties.property import Property
+from gcdmc.model.types import FloatList
 
 
 class FloatProperty(Property[float, float]):

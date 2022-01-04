@@ -1,8 +1,8 @@
 from __future__ import annotations
 from typing import Any
 
-from model.properties.property import Property
-from model.types import IntegerList
+from gcdmc.model.properties.property import Property
+from gcdmc.model.types import IntegerList
 
 
 class IntegerProperty(Property[int, int]):

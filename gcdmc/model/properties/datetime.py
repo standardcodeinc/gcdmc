@@ -3,8 +3,8 @@ from typing import Any
 
 import datetime
 
-from model.properties.property import Property
-from model.types import DatetimeList
+from gcdmc.model.properties.property import Property
+from gcdmc.model.types import DatetimeList
 
 
 class DatetimeProperty(Property[datetime.datetime, datetime.datetime]):

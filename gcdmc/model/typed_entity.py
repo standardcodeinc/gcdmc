@@ -12,9 +12,9 @@ from typing import (
 
 from google.cloud.datastore import Entity, Key
 
-from core.subentity import Subentity, undelegated
-from model.errors import UnassignedPropertyError, UndefinedPropertyError
-from model.properties.property import Property
+from gcdmc.core.subentity import Subentity, undelegated
+from gcdmc.model.errors import UnassignedPropertyError, UndefinedPropertyError
+from gcdmc.model.properties.property import Property
 
 
 class TypedEntity(Subentity):

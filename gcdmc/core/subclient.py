@@ -12,10 +12,10 @@ from google.api_core.retry import Retry
 from google.auth.credentials import Credentials
 from google.cloud.datastore import Client
 
-from core.reduction import ReducedBatch, ReducedTransaction
-from core.registry import Registry
-from core.subentity import Subentity
-from core.subquery import Subquery
+from gcdmc.core.reduction import ReducedBatch, ReducedTransaction
+from gcdmc.core.registry import Registry
+from gcdmc.core.subentity import Subentity
+from gcdmc.core.subquery import Subquery
 
 
 class Subclient(Client):

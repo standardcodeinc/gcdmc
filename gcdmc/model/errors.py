@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Any, TYPE_CHECKING
 if TYPE_CHECKING:
-    from model.typed_entity import TypedEntity
+    from gcdmc.model.typed_entity import TypedEntity
 
 
 class UndefinedPropertyError(Exception):

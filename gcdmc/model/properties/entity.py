@@ -3,8 +3,8 @@ from typing import Any
 
 from google.cloud.datastore import Entity
 
-from model.properties.property import Property
-from model.types import EntityList
+from gcdmc.model.properties.property import Property
+from gcdmc.model.types import EntityList
 
 
 class EntityProperty(Property[Entity, Entity]):

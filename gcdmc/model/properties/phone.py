@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Any
 
-from model.properties.property import Property
-from model.properties.string import StringProperty
-from model.types import PhoneList
-from model.types.utils import is_parseable_phone
+from gcdmc.model.properties.property import Property
+from gcdmc.model.properties.string import StringProperty
+from gcdmc.model.types import PhoneList
+from gcdmc.model.types.utils import is_parseable_phone
 
 
 class PhoneProperty(StringProperty):

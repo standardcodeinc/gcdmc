@@ -1,3 +1,3 @@
-import control
-import core
-import model
+import gcdmc.control
+import gcdmc.core
+import gcdmc.model

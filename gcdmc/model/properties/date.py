@@ -3,9 +3,9 @@ from typing import Any, List
 
 import datetime
 
-from model.properties.property import Property
-from model.types import DateList
-from model.types.utils import is_valid_date
+from gcdmc.model.properties.property import Property
+from gcdmc.model.types import DateList
+from gcdmc.model.types.utils import is_valid_date
 
 
 class DateProperty(Property[datetime.datetime, datetime.date]):

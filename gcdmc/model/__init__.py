@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from model.errors import (
+from gcdmc.model.errors import (
     UnassignedPropertyError,
     UndefinedPropertyError,
     UnexposedPropertyError,
 )
-from model.interface import IEntity
-from model.typed_entity import TypedEntity
+from gcdmc.model.interface import IEntity
+from gcdmc.model.typed_entity import TypedEntity
 
 __all__ = [
     'UnassignedPropertyError',

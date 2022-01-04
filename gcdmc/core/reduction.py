@@ -1,12 +1,12 @@
 from __future__ import annotations
 from typing import Dict, List, Optional, TYPE_CHECKING
 if TYPE_CHECKING:
-    from core.subclient import Subclient
+    from gcdmc.core.subclient import Subclient
 
 from google.api_core.retry import Retry
 from google.cloud.datastore import Key, Batch, Transaction
 
-from core.subentity import Subentity
+from gcdmc.core.subentity import Subentity
 
 
 class Reduction:

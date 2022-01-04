@@ -1,8 +1,8 @@
-from core.reduction import ReducedBatch, ReducedTransaction
-from core.registry import Registry, RegistryError
-from core.subclient import Subclient
-from core.subentity import Subentity, undelegated
-from core.subquery import Subiterator, Subquery
+from gcdmc.core.reduction import ReducedBatch, ReducedTransaction
+from gcdmc.core.registry import Registry, RegistryError
+from gcdmc.core.subclient import Subclient
+from gcdmc.core.subentity import Subentity, undelegated
+from gcdmc.core.subquery import Subiterator, Subquery
 
 __all__ = [
     'ReducedBatch',
