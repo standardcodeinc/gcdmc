@@ -53,6 +53,11 @@ class TypedList(Generic[T], List[T], list):
                          validator=self._validator,
                          iterable=super().copy())
 
+    def __add__(self, other: List) -> TypedList[T]:
+        return TypedList(self._type,
+                         validator=self._validator,
+                         iterable=super().__add__(other))
+
     def __iadd__(self, iterable: Iterable) -> TypedList[T]:
         self.extend(iterable)
         return self

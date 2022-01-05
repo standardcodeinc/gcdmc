@@ -24,9 +24,29 @@ def test_extend():
     assert l == [1, 2, 3]
 
 
-def test_iadd():
+def test_add_regular_list():
+    l: TypedList[int] = TypedList(int, iterable=[1, 2, 3])
+    result: TypedList[int] = l + [4, 5, 6]
+    assert isinstance(result, TypedList)
+    assert result == [1, 2, 3, 4, 5, 6]
+
+
+def test_add_typed_list():
+    l: TypedList[int] = TypedList(int, iterable=[1, 2, 3])
+    result: TypedList[int] = l + TypedList(int, iterable=[4, 5, 6])
+    assert isinstance(result, TypedList)
+    assert result == [1, 2, 3, 4, 5, 6]
+
+
+def test_iadd_regular_list():
     l: TypedList[int] = TypedList(int, iterable=[1, 2, 3])
     l += [4, 5, 6]
+    assert l == [1, 2, 3, 4, 5, 6]
+
+
+def test_iadd_typed_list():
+    l: TypedList[int] = TypedList(int, iterable=[1, 2, 3])
+    l += TypedList(int, iterable=[4, 5, 6])
     assert l == [1, 2, 3, 4, 5, 6]
 
 
@@ -41,6 +61,7 @@ def test_insert():
 def test_copy_retains_values():
     l: TypedList[int] = TypedList(int, iterable=[1, 2, 3])
     copy: TypedList[int] = l.copy()
+    assert isinstance(copy, TypedList)
     assert l is not copy
     assert l == copy
 
