@@ -24,7 +24,6 @@ class TypedList(Generic[T], List[T], list):
     :param iterable: An iterable of values to initialize the list with. Note
         that every value in the iterable will have its type and value checked.
     """
-
     def __init__(self,
                  type_: type,
                  validator: Optional[Validator] = None,
@@ -53,6 +52,10 @@ class TypedList(Generic[T], List[T], list):
         return TypedList(self._type,
                          validator=self._validator,
                          iterable=super().copy())
+
+    def __iadd__(self, iterable: Iterable) -> TypedList[T]:
+        self.extend(iterable)
+        return self
 
     def _check_value(self, v: Any) -> None:
         if not isinstance(v, self._type):
