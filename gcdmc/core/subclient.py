@@ -36,7 +36,7 @@ class Subclient(Client):
                          _use_grpc=_use_grpc)
 
     def get_multi(self,
-                  keys: List[Key | str],
+                  keys: List[Union[Key, str]],
                   missing: Optional[List] = None,
                   deferred: Optional[List] = None,
                   transaction: Transaction = None,

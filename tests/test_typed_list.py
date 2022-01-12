@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from gcdmc.model.types import *
+from gcdmc.model.types import TypedList
 
 
 def test_init():
@@ -58,7 +58,7 @@ def test_insert():
     assert l == [1, 2, 3]
 
 
-def test_copy_retains_values():
+def test_copy_retains_type_and_values():
     l: TypedList[int] = TypedList(int, iterable=[1, 2, 3])
     copy: TypedList[int] = l.copy()
     assert isinstance(copy, TypedList)
@@ -83,6 +83,12 @@ def test_extend_invalid_type():
         l.extend([1, 'foo'])
 
 
+def test_add_invalid_type():
+    l: TypedList[int] = TypedList(int)
+    with pytest.raises(TypeError):
+        _: TypedList[int] = l + ['foo']
+
+
 def test_iadd_invalid_type():
     l: TypedList[int] = TypedList(int)
     with pytest.raises(TypeError):
@@ -93,27 +99,6 @@ def test_insert_invalid_type():
     l: TypedList[int] = TypedList(int)
     with pytest.raises(TypeError):
         l.insert(0, 'foo')
-
-
-def test_copy_append_invalid_type():
-    l: TypedList[int] = TypedList(int)
-    copy: TypedList[int] = l.copy()
-    with pytest.raises(TypeError):
-        copy.append('foo')
-
-
-def test_copy_extend_invalid_type():
-    l: TypedList[int] = TypedList(int)
-    copy: TypedList[int] = l.copy()
-    with pytest.raises(TypeError):
-        copy.extend([1, 'foo'])
-
-
-def test_copy_insert_invalid_type():
-    l: TypedList[int] = TypedList(int)
-    copy: TypedList[int] = l.copy()
-    with pytest.raises(TypeError):
-        copy.insert(0, 'foo')
 
 
 def test_init_invalid_value():
@@ -135,6 +120,12 @@ def test_extend_invalid_value():
         l.extend([1, -1])
 
 
+def test_add_invalid_value():
+    l: TypedList[int] = TypedList(int, validator=lambda x: x > 0)
+    with pytest.raises(ValueError):
+        _: TypedList[int] = l + [1, -1]
+
+
 def test_iadd_invalid_value():
     l: TypedList[int] = TypedList(int, validator=lambda x: x > 0)
     with pytest.raises(ValueError):
@@ -145,24 +136,3 @@ def test_insert_invalid_value():
     l: TypedList[int] = TypedList(int, validator=lambda x: x > 0)
     with pytest.raises(ValueError):
         l.insert(0, -1)
-
-
-def test_copy_append_invalid_value():
-    l: TypedList[int] = TypedList(int, validator=lambda x: x > 0)
-    copy: TypedList[int] = l.copy()
-    with pytest.raises(ValueError):
-        copy.append(-1)
-
-
-def test_copy_extend_invalid_value():
-    l: TypedList[int] = TypedList(int, validator=lambda x: x > 0)
-    copy: TypedList[int] = l.copy()
-    with pytest.raises(ValueError):
-        copy.extend([1, -1])
-
-
-def test_copy_insert_invalid_value():
-    l: TypedList[int] = TypedList(int, validator=lambda x: x > 0)
-    copy: TypedList[int] = l.copy()
-    with pytest.raises(ValueError):
-        copy.insert(0, -1)
