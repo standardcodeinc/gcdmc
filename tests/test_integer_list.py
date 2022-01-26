@@ -30,7 +30,7 @@ def test_add_regular_list() -> None:
     assert result == [1, 2, 3, 4]
 
 
-def test_add_boolean_list() -> None:
+def test_add_integer_list() -> None:
     l: IntegerList = IntegerList([1, 2])
     result: IntegerList = l + IntegerList([3, 4])
     assert isinstance(result, IntegerList)
@@ -43,7 +43,7 @@ def test_iadd_regular_list() -> None:
     assert l == [1, 2, 3, 4]
 
 
-def test_iadd_boolean_list() -> None:
+def test_iadd_integer_list() -> None:
     l: IntegerList = IntegerList([1, 2])
     l += IntegerList([3, 4])
     assert l == [1, 2, 3, 4]
@@ -69,7 +69,7 @@ def test_init_invalid_type() -> None:
         _: IntegerList = IntegerList([1, 'foo'])
 
 
-def test_append_invlaid_type() -> None:
+def test_append_invalid_type() -> None:
     l: IntegerList = IntegerList()
     with pytest.raises(TypeError):
         l.append('foo')

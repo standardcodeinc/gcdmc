@@ -69,7 +69,7 @@ def test_init_invalid_type() -> None:
         _: BooleanList = BooleanList([True, 1])
 
 
-def test_append_invlaid_type() -> None:
+def test_append_invalid_type() -> None:
     l: BooleanList = BooleanList()
     with pytest.raises(TypeError):
         l.append(1)

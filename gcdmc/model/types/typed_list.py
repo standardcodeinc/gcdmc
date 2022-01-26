@@ -5,7 +5,7 @@ T = TypeVar('T')
 Validator = Callable[[T], bool]
 
 
-class TypedList(Generic[T], List[T], list):
+class TypedList(List[T], list):
     """A list that only stores values of a certain type, used for properties
     that store lists.
 

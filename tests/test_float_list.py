@@ -30,7 +30,7 @@ def test_add_regular_list() -> None:
     assert result == [1.0, 2.0, 3.0, 4.0]
 
 
-def test_add_boolean_list() -> None:
+def test_add_float_list() -> None:
     l: FloatList = FloatList([1.0, 2.0])
     result: FloatList = l + FloatList([3.0, 4.0])
     assert isinstance(result, FloatList)
@@ -43,7 +43,7 @@ def test_iadd_regular_list() -> None:
     assert l == [1.0, 2.0, 3.0, 4.0]
 
 
-def test_iadd_boolean_list() -> None:
+def test_iadd_float_list() -> None:
     l: FloatList = FloatList([1.0, 2.0])
     l += FloatList([3.0, 4.0])
     assert l == [1.0, 2.0, 3.0, 4.0]
@@ -69,7 +69,7 @@ def test_init_invalid_type() -> None:
         _: FloatList = FloatList([1.0, 'foo'])
 
 
-def test_append_invlaid_type() -> None:
+def test_append_invalid_type() -> None:
     l: FloatList = FloatList()
     with pytest.raises(TypeError):
         l.append('foo')
